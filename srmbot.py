@@ -14,13 +14,24 @@ logger = logging.getLogger(__name__)
 
 token='PUT-YOUR-TELEGRAM-TOKEN-HERE'
 
+#Helper function to reply quickly
 @run_async
 def reply(bot, update, message):
+	"""Shows the typing action and replies to original message sender."""
 	bot.send_chat_action(chat_id=update.message.chat_id,action='typing')
 	bot.sendMessage(chat_id=update.message.chat_id,text=message,parse_mode='markdown')
+	return
 
+#Handles the registration. Take care of the test cases.
 @run_async
 def register(bot, update, args):
+	""" Responsible for registering a new user.
+	    Test cases handled : 1. Check whether correct number of credentials are entered.
+				 2. Check whether this chat id is already registered.
+				 3. Check whether the credentials are correct by logging in college website.
+	    Adds the data to database. Note password has to go through enc() which handles encrpytion.
+	    Replies either with error_messages or success_message based on outcome. """ 
+
 	chat_id = update.message.chat_id
 	try:
 		reg_num, pwd = args
