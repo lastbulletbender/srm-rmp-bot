@@ -38,7 +38,6 @@ def register(bot, update, args):
 		name = scraper.scrape(reg_num,pwd,'check_registration')
 	except:
 		error_message = "Are you sure you entered the correct registration/password?"
-		logger.info("Incorrect credentials by %s : %s %s",chat_id,reg_num,pwd)
 		reply(bot,update,error_message)
 		return
 	db.register(chat_id,reg_num,enc(pwd))
@@ -72,7 +71,7 @@ def unknown(bot, update):
 	messages = ["I'm not really a fully functional A.I, you know", "I'm not programmed to understand this yet.",\
 		"Try harder!","Bleep Bloop Bleep. Don't really understand you", "Use */help* for the list of commands"]
 	message = random.choice(messages);
-	logger.info("Unknown by %s (%s) : %s",update.message.chat_id,update.message.from_user.first_name,update.message.text)
+	logger.info("Unknown by %s ",update.message.chat_id)
 	reply(bot, update, message)
 	return
 
