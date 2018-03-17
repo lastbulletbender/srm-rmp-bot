@@ -28,7 +28,7 @@ def register(bot, update, args):
 	""" Responsible for registering a new user.
 	    Test cases handled : 1. Check whether correct number of credentials are entered.
 				 2. Check whether this chat id is already registered.
-				 3. Check whether the credentials are correct by logging in college website.
+				 3. Check whether the credentials are correct by logging in the college website.
 	    Adds the data to database. Note password has to go through enc() which handles encrpytion.
 	    Replies either with error_messages or success_message based on outcome. """ 
 
