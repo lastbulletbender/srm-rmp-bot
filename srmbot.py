@@ -58,6 +58,7 @@ def register(bot, update, args):
 	reply(bot,update,success_message)
 	return
 
+#Handles the unregistration using chat_id.
 @run_async
 def unregister(bot, update):
 	chat_id = update.message.chat_id
@@ -77,6 +78,7 @@ def unregister(bot, update):
 	return
 
 
+#Reply to messages which cannot be handled.
 @run_async
 def unknown(bot, update):
 	messages = ["I'm not really a fully functional A.I, you know", "I'm not programmed to understand this yet.",\
@@ -85,6 +87,7 @@ def unknown(bot, update):
 	logger.info("Unknown by %s ",update.message.chat_id)
 	reply(bot, update, message)
 	return
+
 
 @run_async
 def attendance(bot, update, args):
