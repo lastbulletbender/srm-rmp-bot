@@ -2,10 +2,6 @@
 
 *.pyc
 
-#Database(Schema will be available in README)
-
-*.db
-
 #Tokens and keys
 
 cx.py
