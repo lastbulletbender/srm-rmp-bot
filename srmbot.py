@@ -89,6 +89,7 @@ def unknown(bot, update):
 	return
 
 
+#Replies to command /attendance
 @run_async
 def attendance(bot, update, args):
 	chat_id = update.message.chat_id
@@ -104,12 +105,17 @@ def attendance(bot, update, args):
 	reply(bot,update,attendance_message);
 	return
 
+#Replies to command /start.
+############
+# NEEDS A COMPLETE MESSAGE
+###########
 @run_async
 def start(bot, update):
 	user_name = update.message.from_user.first_name
 	message = "Hey " + user_name + "! Let's get started. To register type\n */register YOUR_REG_NUMBER PASSWORD*"
 	logger.info("New user : %s (%s)",update.message.chat_id, user_name)
 	reply(bot,update,message)
+
 
 @run_async
 def timetable(bot, update, args):
