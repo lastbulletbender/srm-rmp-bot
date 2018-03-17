@@ -53,5 +53,5 @@ def add_to_queue(browser):
 
 print q.qsize()
 for i in range(0,4):
-	browser = webdriver.Chrome("/usr/lib/chromium-browser/chromedriver",chrome_options=options)
+	browser = webdriver.Chrome("drivers/chromedriver",chrome_options=options)
 	add_to_queue(browser)
