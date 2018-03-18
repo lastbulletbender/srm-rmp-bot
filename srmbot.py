@@ -168,6 +168,8 @@ if (__name__ == "__main__"):
 	dispatcher.add_handler(timetable_handler)
 	dispatcher.add_handler(unknown_handler)
 
+#For webhook
+'''
 	updater.start_webhook(listen='0.0.0.0',
 			port=443,
 			url_path=token,
@@ -176,4 +178,6 @@ if (__name__ == "__main__"):
 			webhook_url='https://YOUR-SERVER-IP-OR-DOMAIN/TOKEN',
 			clean=True )
 	updater.idle()
+'''
 
+	updater.start_polling()
